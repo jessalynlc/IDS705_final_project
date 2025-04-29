@@ -25,6 +25,8 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install jupyter nbconvert
+          pip install pandas numpy matplotlib scipy seaborn scikit-learn statsmodels xgboost lightgbm optuna torch requests joblib
+
 
       - name: Convert Notebook to HTML
         run: |
