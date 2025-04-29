@@ -121,9 +121,6 @@ Tree-based models (especially LightGBM) perform best for short-term (1-hour) for
 - **`README.md`**: Overview of the project, including its purpose, structure, and instructions for navigating the repository.
 - **`requirements.txt`**: Python dependencies required to run the project (for reproducibility).
 
-Great! Here's a version of the **Usage Instructions** tailored specifically to your **Electricity Price Forecasting** project based on your file structure and workflow:
-
----
 
 ### Usage Instructions
 
