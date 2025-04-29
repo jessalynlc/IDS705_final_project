@@ -35,7 +35,7 @@ jobs:
             --execute
 
       - name: Upload HTML artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: data-scrape-zixiao-html
           path: data_scrape_zixiao.html
