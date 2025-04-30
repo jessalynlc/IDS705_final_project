@@ -1,4 +1,50 @@
-name: Render data_scrape_zixiao Notebook
+#name: Render data_scrape_zixiao Notebook
+#
+#on:
+#  push:
+#    branches:
+#      - zixiao_new_new
+#  pull_request:
+#    branches:
+#      - zixiao_new_new
+#
+#jobs:
+#  render-notebook:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v3
+#
+#      - name: Set up Python
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.x'
+#
+#      - name: Install dependencies
+#        run: |
+#          pip install --upgrade pip
+#          pip install jupyter nbconvert
+#          pip install pandas numpy matplotlib scipy seaborn scikit-learn statsmodels xgboost lightgbm optuna torch requests joblib
+#
+#      # Temporarily disable rendering
+#      - name: Convert Notebook to HTML
+#        if: false
+#        run: |
+#          jupyter nbconvert data_scrape_zixiao.ipynb \
+#            --to html \
+#            --output data_scrape_zixiao.html \
+#            --ExecutePreprocessor.timeout=-1 \
+#            --execute
+#
+#      - name: Upload HTML artifact
+#        if: false
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: data-scrape-zixiao-html
+#          path: data_scrape_zixiao.html
+
+name: Render 04_Final_model Notebook
 
 on:
   push:
@@ -24,22 +70,22 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install jupyter nbconvert
-          pip install pandas numpy matplotlib scipy seaborn scikit-learn statsmodels xgboost lightgbm optuna torch requests joblib
+          pip install jupyter nbconvert \
+                      pandas numpy matplotlib scipy \
+                      seaborn scikit-learn statsmodels \
+                      xgboost lightgbm optuna torch \
+                      requests joblib
 
-      # Temporarily disable rendering
-      - name: Convert Notebook to HTML
-        if: false
+      - name: Convert 04_Final_model.ipynb to HTML
         run: |
-          jupyter nbconvert data_scrape_zixiao.ipynb \
+          jupyter nbconvert "notebooks/04_Final_model.ipynb" \
             --to html \
-            --output data_scrape_zixiao.html \
+            --output "notebooks/04_Final_model.html" \
             --ExecutePreprocessor.timeout=-1 \
             --execute
 
       - name: Upload HTML artifact
-        if: false
         uses: actions/upload-artifact@v4
         with:
-          name: data-scrape-zixiao-html
-          path: data_scrape_zixiao.html
+          name: 04_Final_model-html
+          path: notebooks/04_Final_model.html
