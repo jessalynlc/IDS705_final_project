@@ -43,16 +43,15 @@
 #        with:
 #          name: data-scrape-zixiao-html
 #          path: data_scrape_zixiao.html
-
 name: Render 04_Final_model Notebook
 
 on:
   push:
     branches:
-      - zixiao_new_new
+      - main
   pull_request:
     branches:
-      - zixiao_new_new
+      - main
 
 jobs:
   render-notebook:
